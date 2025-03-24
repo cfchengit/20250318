@@ -5,6 +5,8 @@
 /* 整個網頁的背景顏色為 #02005B*/
 body{
     background-color: #02005B;
+     width: 100%;
+    height: 100%;
 }
 /* 設定container div有個方框線條，線條顏色為白色，
 寬為整個視窗的80vw與100vh，最大寬度為950px，
