@@ -1,0 +1,194 @@
+*{
+    /* 產生外框，黃色顏色，粗細為2px */
+    /* border : 2px solid yellow; */
+}
+/* 整個網頁的背景顏色為 #02005B*/
+body{
+    background-color: #02005B;
+}
+/* 設定container div有個方框線條，線條顏色為白色，
+寬為整個視窗的80vw與100vh，最大寬度為950px，
+文字內距為50px ，框內的文字大小為15px，文字顏色為白色，
+行高維28px，文字間距為1px，文字設定為微軟正黑體，英文字採用sans-serif
+.container div內的兩個div，分為左右兩邊，且.right與.left都對上對齊
+
+*/
+
+
+
+.container{
+    border: 2px solid white;
+    width: 80vw;
+    height: 100vh;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    font-size: 15px;
+    color: white;
+    line-height: 28px;
+    letter-spacing: 1px;
+    font-family: "微軟正黑體", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    }
+/* left與right兩個div分別設定站左右兩邊，
+左邊佔整個43%，右邊佔整個div的57%，.container div內的兩個div，.right與.left都上下對齊  */
+.left{
+    width: 43%;
+    float: left;
+    vertical-align: top;
+    /* 產生右邊加上框線，顏色為#FF7168，實線，1px */
+    border-right: 1px solid #FF7168;
+    padding-right: 50px;
+}    
+.right{
+    width: 57%;
+    float: right;
+    vertical-align: top;
+    padding-left: 50px;
+}
+/* .btn1按鈕的背景顏色為#FF7168，文字為白色，.btn2按鈕背景顏色為#02005B，外框圍#FF7168，文字為白色
+按鈕文字不要產生底線*/
+.buttons .btn1{
+    background-color: #FF7168;
+    color: white;
+    border: 2px solid #FF7168;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.buttons .btn2{
+    background-color: #02005B;
+    color: white;
+    border: 2px solid #FF7168;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+/* .listSkill ，li左右顯示，如果超過.left寬度，請顯示在下一行*/
+.listSkill{
+    display: flex;
+    /* justify-content: space-between;
+    align-items: top; */
+    flex-wrap: wrap; /* 超過寬度，換行 */
+    list-style-type: none; /* 移除項目符號 */
+    padding-left: 0; /* 移除左邊的內邊距 */
+    margin-left: 0; /* 移除左邊的margin */
+    
+}
+.listSkill li{
+    width: 25%; /* 設定 li 元素的寬度 */
+    box-sizing: border-box;/* 設定寬度包含 padding 與 border */    
+    margin-right: 5px; /* 項目之間的間距 */
+    margin-bottom: 5px; /* 項目之間的垂直間距 */
+    word-break: keep-all; /* 防止單詞斷開 */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+/* 在.listskill後面產生一個方框，線條粗為寬為20px，高為8px，顏色為#FF7168，左邊外距為10px  */
+.block h2::after{
+    content: "";
+    width: 20px;
+    height: 8px;
+    display: inline-block; /*接在文字後面*/
+    background-color: #FF7168;
+    margin-left: 10px;
+}
+.listSkill .circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 113, 104,0.4);
+    position: relative;
+    overflow: hidden;
+    
+}
+.listSkill .circle::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    border-radius: 50%;
+    background-color: #02005B;
+}
+.listSkill .circle .p90,.p180,.p270,.p360{ 
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background-color: #FF7168;
+}
+.p180{
+    top: 50%;
+}
+.listProgram{
+    display: list-item;
+    justify-content: space-between;
+    align-items: top;
+    flex-wrap: wrap; /* 超過寬度，換行 */
+    list-style-type: none; /* 移除項目符號 */
+    padding-left: 0; /* 移除左邊的內邊距 */
+    margin-left: 0; /* 移除左邊的margin */
+    
+}
+
+.listProgram .bar{
+    width: 70%;
+    height: 10px;
+    border:#FF7168 2px solid;
+    border-radius: 5px;
+}
+.value{
+    width: 60%;
+    height: 100%;
+    background-color: #FF7168;
+    
+}
+.value.p10{
+    width: 10%;
+  }
+  .value.p40{
+    width: 40%;
+  }
+
+
+
+.listExperience>li{ /*>主要是為只選在listExperience下的li，其再底下的下一層li不受影響*/
+    display: flex;
+    margin-bottom: 10px;
+    list-style-type: none;
+    
+  }
+  .listExperience li ul{
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: solid 4px white;
+    list-style-type: none;
+    
+  }
+
+  .listContests{
+    list-style-type: none;
+    /* display: list-item; */
+    /* 這個屬性是讓它變成一個列表 */
+    /* justify-content: space-between;  */
+    /* 左右兩個元素，我希望所有的空白都集中在中央，就可以用 justify-content 給它 space-between */
+    /* align-items: top;  */
+    /*對齊是上下動，那就會是副軸線 align-items 給它 top*/
+    /* flex-wrap: wrap;  */
+    /* 超過寬度，換行 */
+    list-style-type: none; /* 移除項目符號 */
+    padding-left: 0; /* 移除左邊的內邊距 */
+    margin-left: 0; /* 移除左邊的margin */
+  }
+
+  
